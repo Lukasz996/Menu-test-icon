@@ -5,55 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szachownica </title>
+    <title>Szachownica Float</title>
     <style>
-        * {
-            margin: 0;
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
         }
-
         .board {
-            box-sizing: border-box;
-            position: absolute;
-            top: calc(50% - 15vw - 10px);
-            left: calc(50% - 15vw - 10px);
             width: 30vw;
-            height: 30vw;
             border: 10px solid black;
-            font-size: 0;
+            margin: 50px auto;
         }
 
         span {
-            display: inline-block;
-            background-color: white;
+            float: left;
             width: 50%;
-            height: 50%;
+            height: 15vw;
+            
         }
-
-        span:first-child,
-        span:last-child {
-            background-color: red;
+        span:nth-child(1), span:nth-child(4){
+            background-color: #f00;
         }
-
-        h1 {
-            position: absolute;
-            bottom: 30%;
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 40px;
+        h1{
+            margin-top: 50px;
             text-align: center;
         }
+
     </style>
 
 </head>
 
 <body>
-    <div class="board">
+    <div class="board clearfix">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <h1>Szachownica "inline-block"</h1>
+    <h1>Szachownica "float"</h1>
 </body>
 
 </html>
